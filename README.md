@@ -12,4 +12,3 @@ Install all modules :- `pip3 install requests json pprint os path urllib.request
 Open your terminal Using python3 and follow the command install all modules given the command. then run terminal command 
 `python3 instagram.py`<br>
 
-## If you have any querry then comments or feedback
