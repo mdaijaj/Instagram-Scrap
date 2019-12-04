@@ -1,59 +1,5 @@
 import requests, json, pprint, os, path
 import urllib.request
-# from bs4 import BeautifulSoup
-
-# url="http://form.hktdc.com/UI_VisitorIntranet/Public/VisitorListPublic.aspx?EVENTID=588916b5-631b-4d63-a828-26d727e8011f&LANGID?__a=1"
-
-# # def get_data(url):
-# data=requests.get(url)
-# soup=BeautifulSoup(data.text, "html.parser")
-# data_item=soup.find_all("tr", class_="datagrid_item")
-# for i in data_item:
-#     a=i.find("a")
-#     print(a)
-# print(get_data(url))
-
-
-
-
-
-
-
-# url=("https://www.instagram.com/explore/tags/sarees/?__a=1")
-# def get_data(url):
-
-#     data=requests.get(url)
-#     response=(data.text)
-#     json_data=json.loads(response)
-#     all_data=json_data["graphql"]["hashtag"]
-#     # pprint.pprint(all_data)
-#     ID=all_data["id"]
-#     name=all_data["name"]
-#     profileUrl=all_data["profile_pic_url"]
-
-#     taken_at_timestamp=all_data["edge_hashtag_to_media"]["edges"][0]["node"]
-#     # pprint.pprint(taken_at_timestamp)
-#     timestamp=taken_at_timestamp["taken_at_timestamp"]
-#     hashtag=taken_at_timestamp["edge_media_to_caption"]["edges"][0]["node"]["text"].split("\n")
-#     shortcode=taken_at_timestamp["shortcode"]
-#     # pprint.pprint(hashtag)
-#     # length=len(hashtag)
-#     # for i in range(0,length+1):
-#     #     pprint.pprint(hashtag[length])
-
-#     dic={
-#         "id": ID,
-#         "name": name,
-#         "timestamp": timestamp,
-#         "profileUrl": profileUrl,
-#         "hashtag": hashtag,
-#         "shortcode": shortcode
-#     }
-#     return dic
-# pprint.pprint(get_data(url))
-
-
-
 
 
 #home url fetch data
