@@ -3,14 +3,14 @@ import urllib.request
 
 
 #home url fetch data
-hashtag_list=[]
-if os.path.exists("instagramAllData.json"):
-    with open("instagramAllData.json", "r") as file:
-        read=file.read()
-        data=json.loads(read)
-        pprint.pprint(data)
-        print("file allready exists")
-else:
+def instagram_data():
+    hashtag_list=[]
+    if os.path.exists("instagramAllData.json"):
+        with open("instagramAllData.json", "r") as file:
+            read=file.read()
+            data=json.loads(read)
+        return (data)
+
     home_url="https://www.instagram.com/explore/tags/sarees/?__a=1"            
     data=requests.get(home_url)
     response=(data.text)
@@ -18,14 +18,14 @@ else:
     all_data=json_data["graphql"]["hashtag"]["edge_hashtag_to_media"]["edges"]
     # p(all_data)
 
-    id_list=[]
-    user_id=[]
+    all_data_list=[]
+    # id_list=[]
+    # user_id=[]
     for index in all_data:
         owner=index["node"]["owner"]["id"]
         user=index["node"]["shortcode"]
-
-        id_list.append(owner)
-        user_id.append(user)
+        # id_list.append(owner)
+        # user_id.append(user)
 
         #user url fetch data
         obj="/?__a=1"
@@ -80,13 +80,13 @@ else:
             "like": like,
             "comment": comment
         }
+        all_data_list.append(data_detail)
         pprint.pprint(data_detail)
-        with open("instagramAllData.json","w")as file:
-            data=json.dump(data_detail, file, indent=4)
-            pprint.pprint(data)
-            print("data create successfully")
-            break
-    print(hashtag_list)
+        print(hashtag_list)                     ## show hashtag not duplicate value
+    with open("instagramAllData.json","w")as file:
+        data=json.dump(all_data_list, file, indent=4)
         
+    return (all_data_list)
+pprint.pprint(instagram_data())
 
-
+        
